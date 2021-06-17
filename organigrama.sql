@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2021 a las 03:52:18
+-- Tiempo de generación: 15-06-2021 a las 20:01:59
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -29,12 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `organigrama` (
   `ID_ORGANIGRAMA` int(11) NOT NULL,
-  `AREA` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
-  `DESCRIPCION` text COLLATE utf8_spanish_ci NOT NULL,
+  `AREA` varchar(60) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `DESCRIPCION` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `AREA_DEPENDE` int(11) NOT NULL,
   `NIVEL` int(11) NOT NULL,
   `TIPO_AREA` int(11) NOT NULL,
-  `TITULAR` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `TITULAR` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -130,6 +130,16 @@ INSERT INTO `organigrama` (`ID_ORGANIGRAMA`, `AREA`, `DESCRIPCION`, `AREA_DEPEND
 --
 ALTER TABLE `organigrama`
   ADD PRIMARY KEY (`ID_ORGANIGRAMA`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `organigrama`
+--
+ALTER TABLE `organigrama`
+  MODIFY `ID_ORGANIGRAMA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
